@@ -1,0 +1,27 @@
+{
+  "id": "npc_town_009",
+  "display_name": "Lata Bose",
+  "home_id": "home_old_market_11",
+  "workplace_id": "business_grocery_01",
+  "district_id": "district_old_market",
+  "role": "shopper",
+  "personality_tags": [
+    "routine",
+    "neighbor"
+  ],
+  "skills": {
+    "trading": 1
+  },
+  "wallet": 860,
+  "needs": {
+    "hunger": 40,
+    "energy": 75,
+    "mood": 55
+  },
+  "schedule_id": "schedule_local_resident_day",
+  "relationship_memory": {},
+  "inventory": [
+    "item_phone_basic"
+  ],
+  "license": "original"
+}

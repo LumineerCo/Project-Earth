@@ -1,0 +1,27 @@
+{
+  "id": "npc_town_010",
+  "display_name": "Dev Singh",
+  "home_id": "home_old_market_12",
+  "workplace_id": "courier_hub_old_market",
+  "district_id": "district_old_market",
+  "role": "driver",
+  "personality_tags": [
+    "routine",
+    "neighbor"
+  ],
+  "skills": {
+    "trading": 1
+  },
+  "wallet": 900,
+  "needs": {
+    "hunger": 40,
+    "energy": 75,
+    "mood": 55
+  },
+  "schedule_id": "schedule_commuter_day",
+  "relationship_memory": {},
+  "inventory": [
+    "item_phone_basic"
+  ],
+  "license": "original"
+}

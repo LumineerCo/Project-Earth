@@ -1,0 +1,27 @@
+{
+  "id": "npc_town_008",
+  "display_name": "Arjun Das",
+  "home_id": "home_old_market_10",
+  "workplace_id": "workshop_old_market_01",
+  "district_id": "district_old_market",
+  "role": "mechanic_apprentice",
+  "personality_tags": [
+    "routine",
+    "neighbor"
+  ],
+  "skills": {
+    "trading": 1
+  },
+  "wallet": 820,
+  "needs": {
+    "hunger": 40,
+    "energy": 75,
+    "mood": 55
+  },
+  "schedule_id": "schedule_workshop_day",
+  "relationship_memory": {},
+  "inventory": [
+    "item_phone_basic"
+  ],
+  "license": "original"
+}

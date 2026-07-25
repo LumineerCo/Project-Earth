@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="Project Earth placeholder icon">
+  <rect width="128" height="128" rx="24" fill="#102a43"/>
+  <circle cx="64" cy="64" r="42" fill="#2f80ed"/>
+  <path d="M35 62c12-18 26-12 32-22 10 6 15 17 28 16 10 18-2 39-24 45-19 5-38-8-36-39z" fill="#27ae60" opacity=".9"/>
+</svg>

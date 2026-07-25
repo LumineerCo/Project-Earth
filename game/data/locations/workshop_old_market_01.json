@@ -1,0 +1,8 @@
+{
+  "id": "workshop_old_market_01",
+  "name": "Old Market Repair Workshop",
+  "category": "workplace",
+  "district_id": "district_old_market",
+  "access": "public",
+  "license": "original"
+}

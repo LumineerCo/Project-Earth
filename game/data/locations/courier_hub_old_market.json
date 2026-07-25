@@ -1,0 +1,8 @@
+{
+  "id": "courier_hub_old_market",
+  "name": "Old Market Courier Hub",
+  "category": "workplace",
+  "district_id": "district_old_market",
+  "access": "public",
+  "license": "original"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "service_bus_stop_old_market",
+  "name": "Old Market Bus Stop",
+  "category": "transport_stop",
+  "district_id": "district_old_market",
+  "access": "public_service",
+  "license": "original"
+}

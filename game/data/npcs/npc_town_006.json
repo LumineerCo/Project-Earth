@@ -1,0 +1,27 @@
+{
+  "id": "npc_town_006",
+  "display_name": "Kabir Sen",
+  "home_id": "home_old_market_08",
+  "workplace_id": "courier_hub_old_market",
+  "district_id": "district_old_market",
+  "role": "warehouse_helper",
+  "personality_tags": [
+    "routine",
+    "neighbor"
+  ],
+  "skills": {
+    "trading": 1
+  },
+  "wallet": 740,
+  "needs": {
+    "hunger": 40,
+    "energy": 75,
+    "mood": 55
+  },
+  "schedule_id": "schedule_commuter_day",
+  "relationship_memory": {},
+  "inventory": [
+    "item_phone_basic"
+  ],
+  "license": "original"
+}

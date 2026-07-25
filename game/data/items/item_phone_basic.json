@@ -1,0 +1,10 @@
+{
+  "id": "item_phone_basic",
+  "name": "Basic Phone",
+  "category": "tool",
+  "base_price": 1500,
+  "weight_kg": 0.2,
+  "stack_limit": 1,
+  "legal_status": "legal",
+  "license": "original"
+}

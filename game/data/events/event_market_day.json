@@ -1,0 +1,9 @@
+{
+  "id": "event_market_day",
+  "name": "Old Market Day",
+  "category": "civic_market",
+  "district_id": "district_old_market",
+  "effects": { "customer_density_multiplier": 1.25, "food_price_multiplier": 0.95 },
+  "repeat_rule": "weekly",
+  "license": "original"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "schedule_local_resident_day",
+  "entries": [
+    {
+      "start": "07:30",
+      "action": "breakfast",
+      "target": "home_old_market_05"
+    },
+    {
+      "start": "10:00",
+      "action": "social",
+      "target": "park_old_market_01"
+    },
+    {
+      "start": "12:45",
+      "action": "shop",
+      "target": "business_grocery_01"
+    },
+    {
+      "start": "16:00",
+      "action": "walk",
+      "target": "service_bus_stop_old_market"
+    },
+    {
+      "start": "21:30",
+      "action": "sleep",
+      "target": "home_old_market_05"
+    }
+  ],
+  "license": "original"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "poi_food_stall_02",
+  "name": "Market Food Stall 02",
+  "category": "food_stall",
+  "district_id": "district_old_market",
+  "access": "public_business",
+  "license": "original"
+}

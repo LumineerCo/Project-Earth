@@ -1,0 +1,14 @@
+{
+  "id": "business_grocery_01",
+  "type": "grocery_store",
+  "display_name": "Old Market Grocery",
+  "district_id": "district_old_market",
+  "owner_type": "npc",
+  "owner_id": "npc_town_001",
+  "employees": ["npc_town_001"],
+  "open_hours": { "open": "08:00", "close": "21:00" },
+  "inventory": { "item_lunch_box": 20 },
+  "price_multiplier": 1.08,
+  "reputation": 55,
+  "license": "original"
+}

@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://project_earth_main"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="Script" path="res://scripts/player_controller.gd" id="2_player"]
+[ext_resource type="Script" path="res://scripts/debug_overlay.gd" id="3_debug"]
+[ext_resource type="Script" path="res://scripts/interactable.gd" id="4_interactable"]
+[ext_resource type="Script" path="res://scripts/npc_manager.gd" id="5_npc_manager"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_main")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(640, 360)
+script = ExtResource("2_player")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+enabled = true
+zoom = Vector2(1.5, 1.5)
+
+[node name="NPCManager" type="Node2D" parent="."]
+script = ExtResource("5_npc_manager")
+
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="WelcomeNotice" type="Area2D" parent="Interactables"]
+position = Vector2(720, 360)
+script = ExtResource("4_interactable")
+interaction_id = "welcome_notice"
+interaction_text = "Phase 2 living block active. Watch NPC schedules in the debug overlay."
+
+[node name="DebugLabel" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 1180.0
+offset_bottom = 160.0
+text = "Project Earth Phase 2 Shell"
+script = ExtResource("3_debug")

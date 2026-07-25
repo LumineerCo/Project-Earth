@@ -1,0 +1,27 @@
+{
+  "id": "npc_town_005",
+  "display_name": "Sita Rao",
+  "home_id": "home_old_market_07",
+  "workplace_id": "business_grocery_01",
+  "district_id": "district_old_market",
+  "role": "cashier",
+  "personality_tags": [
+    "routine",
+    "neighbor"
+  ],
+  "skills": {
+    "trading": 1
+  },
+  "wallet": 700,
+  "needs": {
+    "hunger": 40,
+    "energy": 75,
+    "mood": 55
+  },
+  "schedule_id": "schedule_shop_assistant_day",
+  "relationship_memory": {},
+  "inventory": [
+    "item_phone_basic"
+  ],
+  "license": "original"
+}

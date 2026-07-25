@@ -1,0 +1,31 @@
+{
+  "id": "schedule_workshop_day",
+  "entries": [
+    {
+      "start": "07:00",
+      "action": "travel",
+      "target": "workshop_old_market_01"
+    },
+    {
+      "start": "09:00",
+      "action": "work",
+      "target": "workshop_old_market_01"
+    },
+    {
+      "start": "12:30",
+      "action": "lunch",
+      "target": "poi_food_stall_02"
+    },
+    {
+      "start": "17:45",
+      "action": "shop",
+      "target": "business_grocery_01"
+    },
+    {
+      "start": "22:00",
+      "action": "sleep",
+      "target": "home_old_market_06"
+    }
+  ],
+  "license": "original"
+}

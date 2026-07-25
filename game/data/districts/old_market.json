@@ -1,0 +1,10 @@
+{
+  "id": "district_old_market",
+  "name": "Old Market",
+  "type": "town_commercial",
+  "biome": "urban_temperate",
+  "price_multiplier": 1.05,
+  "spawn_profile": "low_mobile_safe",
+  "services": ["service_bus_stop_old_market"],
+  "license": "original"
+}

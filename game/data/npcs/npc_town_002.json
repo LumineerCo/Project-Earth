@@ -1,0 +1,27 @@
+{
+  "id": "npc_town_002",
+  "display_name": "Ravi Kumar",
+  "home_id": "home_old_market_04",
+  "workplace_id": "courier_hub_old_market",
+  "district_id": "district_old_market",
+  "role": "courier",
+  "personality_tags": [
+    "routine",
+    "neighbor"
+  ],
+  "skills": {
+    "trading": 1
+  },
+  "wallet": 580,
+  "needs": {
+    "hunger": 40,
+    "energy": 75,
+    "mood": 55
+  },
+  "schedule_id": "schedule_commuter_day",
+  "relationship_memory": {},
+  "inventory": [
+    "item_phone_basic"
+  ],
+  "license": "original"
+}

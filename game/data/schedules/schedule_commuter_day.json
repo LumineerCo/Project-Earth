@@ -1,0 +1,31 @@
+{
+  "id": "schedule_commuter_day",
+  "entries": [
+    {
+      "start": "06:45",
+      "action": "travel",
+      "target": "courier_hub_old_market"
+    },
+    {
+      "start": "08:30",
+      "action": "work",
+      "target": "courier_hub_old_market"
+    },
+    {
+      "start": "13:00",
+      "action": "lunch",
+      "target": "poi_food_stall_02"
+    },
+    {
+      "start": "18:00",
+      "action": "rest",
+      "target": "park_old_market_01"
+    },
+    {
+      "start": "22:15",
+      "action": "sleep",
+      "target": "home_old_market_04"
+    }
+  ],
+  "license": "original"
+}

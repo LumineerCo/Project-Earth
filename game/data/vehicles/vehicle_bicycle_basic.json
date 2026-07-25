@@ -1,0 +1,10 @@
+{
+  "id": "vehicle_bicycle_basic",
+  "name": "Basic Bicycle",
+  "category": "bicycle",
+  "base_price": 900,
+  "fuel_type": "none",
+  "cargo_capacity_kg": 10,
+  "terrain_tags": ["road", "village_path"],
+  "license": "original"
+}

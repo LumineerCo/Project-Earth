@@ -1,0 +1,10 @@
+{
+  "id": "item_lunch_box",
+  "name": "Lunch Box",
+  "category": "food",
+  "base_price": 80,
+  "weight_kg": 0.5,
+  "stack_limit": 4,
+  "legal_status": "legal",
+  "license": "original"
+}

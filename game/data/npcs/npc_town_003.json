@@ -1,0 +1,27 @@
+{
+  "id": "npc_town_003",
+  "display_name": "Meera Das",
+  "home_id": "home_old_market_05",
+  "workplace_id": "park_old_market_01",
+  "district_id": "district_old_market",
+  "role": "local_resident",
+  "personality_tags": [
+    "routine",
+    "neighbor"
+  ],
+  "skills": {
+    "trading": 1
+  },
+  "wallet": 620,
+  "needs": {
+    "hunger": 40,
+    "energy": 75,
+    "mood": 55
+  },
+  "schedule_id": "schedule_local_resident_day",
+  "relationship_memory": {},
+  "inventory": [
+    "item_phone_basic"
+  ],
+  "license": "original"
+}

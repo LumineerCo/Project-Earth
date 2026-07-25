@@ -1,0 +1,16 @@
+{
+  "id": "npc_town_001",
+  "display_name": "Asha Verma",
+  "home_id": "home_old_market_03",
+  "workplace_id": "business_grocery_01",
+  "district_id": "district_old_market",
+  "role": "shop_assistant",
+  "personality_tags": ["friendly", "careful"],
+  "skills": { "trading": 2, "cooking": 1 },
+  "wallet": 850,
+  "needs": { "hunger": 35, "energy": 80, "mood": 60 },
+  "schedule_id": "schedule_shop_assistant_day",
+  "relationship_memory": {},
+  "inventory": ["item_phone_basic", "item_lunch_box"],
+  "license": "original"
+}

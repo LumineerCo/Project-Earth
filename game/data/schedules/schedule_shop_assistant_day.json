@@ -1,0 +1,11 @@
+{
+  "id": "schedule_shop_assistant_day",
+  "entries": [
+    { "start": "06:30", "action": "travel", "target": "business_grocery_01" },
+    { "start": "08:00", "action": "work", "target": "business_grocery_01" },
+    { "start": "12:30", "action": "lunch", "target": "poi_food_stall_02" },
+    { "start": "17:30", "action": "travel", "target": "home_old_market_03" },
+    { "start": "22:30", "action": "sleep", "target": "home_old_market_03" }
+  ],
+  "license": "original"
+}

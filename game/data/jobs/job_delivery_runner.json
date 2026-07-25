@@ -1,0 +1,11 @@
+{
+  "id": "job_delivery_runner",
+  "name": "Delivery Runner",
+  "category": "starter_job",
+  "district_id": "district_old_market",
+  "required_skill": null,
+  "base_reward": 120,
+  "cooldown_minutes": 30,
+  "stages": ["accept", "pickup", "deliver", "reward_claimed"],
+  "license": "original"
+}

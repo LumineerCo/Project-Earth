@@ -1,0 +1,17 @@
+[gd_resource type="ItemData" load_steps="2" format="3"]
+
+[ext_resource path="res://scripts/items/ItemData.gd" type="Script" id="1"]
+
+[resource]
+script = ExtResource( 1 )
+item_id = "coin"
+display_name = "Coin"
+description = "A small currency token used for vending machines and shops."
+category = "currency"
+max_stack = 100
+weight = 0.02
+value = 1
+usable = false
+equippable = false
+equip_slot = ""
+use_effects = {}

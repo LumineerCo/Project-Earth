@@ -1,0 +1,77 @@
+{
+  "world_structure": {
+    "continents_target": 8,
+    "countries_target": 72,
+    "states_target": 450,
+    "cities_target": 5000,
+    "towns_target": 50000
+  },
+  "countries": [
+    {
+      "id": "kestrel",
+      "name": "Kestrel",
+      "continent": "north_crown",
+      "capital_city": "everharbor",
+      "population": 18000000,
+      "area_km2": 980000,
+      "currency": "Aureli",
+      "official_languages": ["Aureli", "Northen"],
+      "government_type": "constitutional_monarchy",
+      "climate": "temperate",
+      "economy": "mixed",
+      "major_industries": ["agriculture", "shipping", "technology"],
+      "exports": ["timber", "fish", "electronics"],
+      "imports": ["oil", "rare_metals", "luxury_goods"],
+      "emergency_number": "112",
+      "time_zone": "UTC+1",
+      "transport_policy": {
+        "highways": true,
+        "railways": true,
+        "airports": true,
+        "seaports": true,
+        "bus_terminals": true,
+        "metro": false,
+        "bicycle_paths": true
+      },
+      "culture": {
+        "festivals": ["Winter Lantern", "River Fair"],
+        "traditional_foods": ["mushroom stew", "river bread"],
+        "architecture": ["timber halls", "harbor towers"],
+        "clothing_styles": ["wool cloaks", "waterproof coats"],
+        "music": ["fiddle folk"],
+        "sports": ["ice hockey", "boat racing"]
+      },
+      "laws": [
+        {"id": "speed_limit", "name": "Speed Limit", "severity": "minor"},
+        {"id": "fishing_permit", "name": "Fishing Permit", "severity": "moderate"},
+        {"id": "building_permit", "name": "Building Permit", "severity": "moderate"}
+      ],
+      "public_services": [
+        "hospitals",
+        "police_stations",
+        "fire_stations",
+        "schools",
+        "universities",
+        "courts",
+        "parks",
+        "libraries",
+        "postal_services",
+        "public_transport"
+      ],
+      "states": [
+        {
+          "id": "pine_ridge",
+          "name": "Pine Ridge",
+          "capital": "everharbor",
+          "districts": [
+            {
+              "id": "harbor_quarter",
+              "name": "Harbor Quarter",
+              "cities": ["everharbor"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

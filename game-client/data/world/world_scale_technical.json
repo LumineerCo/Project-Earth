@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "stage": "1.6",
+    "title": "World Scale, Streaming & Technical Planning",
+    "description": "Compressed Earth-inspired world scale with chunk-based streaming, LOD philosophy, modular asset workflow, terrain layers, performance budgets, and long-term expansion strategy.",
+    "version": "1.0"
+  },
+  "world_scale": {
+    "type": "compressed_earth_inspired",
+    "rationale": "Feels large but practical for a solo creator. 1:1 Earth is far too large; a small sandbox lacks exploration.",
+    "scale_factor": 0.01,
+    "scale_description": "1 game meter = 100 real meters. A real 10km city becomes 100m in-game, walkable in ~1 minute.",
+    "planet_diameter_km": 12742,
+    "compressed_diameter_m": 127420,
+    "continent_count": 8,
+    "country_count_target": 72,
+    "region_count_target": 450,
+    "chunk_size_m": 256,
+    "chunks_per_region": 16,
+    "region_size_m": 1024,
+    "note": "1 Godot Unit = 1 Meter. Streaming uses 256m chunks; regions group 4x4 chunks (1024m)."
+  },
+  "hierarchy": {
+    "levels": [
+      {"level": 0, "name": "Planet", "count": 1, "description": "Aurelia - the entire playable world."},
+      {"level": 1, "name": "Continent", "count": 8, "description": "Top-level landmasses."},
+      {"level": 2, "name": "Country", "count": 72, "description": "Political boundaries."},
+      {"level": 3, "name": "State", "count": 450, "description": "Administrative regions within countries."},
+      {"level": 4, "name": "City", "count": 5000, "description": "Urban centers of varying size."},
+      {"level": 5, "name": "District", "count": 50000, "description": "Neighborhoods within cities."},
+      {"level": 6, "name": "Chunk", "count": "dynamic", "description": "256m x 256m streaming units. Loaded/unloaded based on player proximity."}
+    ],
+    "streaming_rule": "Only nearby chunks are loaded while distant chunks are unloaded. Game state is preserved when unloading."
+  },
+  "chunk_system": {
+    "chunk_size_m": 256,
+    "load_radius_chunks": 2,
+    "unload_radius_chunks": 3,
+    "load_radius_m": 512,
+    "unload_radius_m": 768,
+    "max_active_chunks": 25,
+    "chunk_contents": ["terrain", "roads", "buildings", "npcs", "trees", "animals", "missions", "props", "lights"],
+    "state_preservation": {
+      "method": "serialize_on_unload",
+      "preserved": ["npc_states", "item_states", "door_states", "mission_progress", "vehicle_positions"],
+      "storage": "res://cache/chunk_states/"
+    },
+    "loading_strategy": "async_background",
+    "threading": "WorkerThreadPool for terrain generation and scene instantiation"
+  },
+  "lod": {
+    "philosophy": "Nearby objects use detailed models. Mid-distance objects use simplified models. Far objects use very low-detail or billboards.",
+    "levels": [
+      {"level": 0, "name": "ultra", "distance_m": 50, "description": "Full detail, all materials, high-poly meshes."},
+      {"level": 1, "name": "high", "distance_m": 150, "description": "Full geometry, simplified materials."},
+      {"level": 2, "name": "medium", "distance_m": 400, "description": "Reduced poly count, merged materials."},
+      {"level": 3, "name": "low", "distance_m": 800, "description": "Low-poly impostors."},
+      {"level": 4, "name": "billboard", "distance_m": 2000, "description": "Camera-facing billboards or skybox impostors."}
+    ],
+    "transition": "smooth_blend",
+    "vegetation_billboards": true,
+    "building_impostors": true
+  },
+  "asset_reuse": {
+    "philosophy": "A solo creator cannot build millions of unique objects. Use modular kits combined differently for variety.",
+    "modular_kits": [
+      {"id": "buildings", "description": "Modular wall, floor, roof, door, window pieces combined into varied structures."},
+      {"id": "roads", "description": "Straight, curve, intersection, bridge segments snapped together."},
+      {"id": "furniture", "description": "Reusable chairs, tables, beds, shelves placed across interiors."},
+      {"id": "vegetation", "description": "Tree, bush, grass, rock variants with random rotation/scale."},
+      {"id": "traffic_signs", "description": "Standardized sign meshes reused globally."},
+      {"id": "street_lights", "description": "Pole + lamp variants placed procedurally along roads."},
+      {"id": "props", "description": "Trash cans, benches, fire hydrants, mailboxes reused in districts."}
+    ],
+    "variation_techniques": ["random_rotation", "random_scale", "material_swaps", "color_tinting", "decal_accents"]
+  },
+  "terrain_layers": {
+    "philosophy": "Separate terrain into layers to make editing easier and streaming more efficient.",
+    "layers": [
+      {"order": 1, "id": "base_terrain", "description": "Heightmap, base ground material."},
+      {"order": 2, "id": "rivers", "description": "Water surfaces, riverbeds."},
+      {"order": 3, "id": "roads", "description": "Road network geometry."},
+      {"order": 4, "id": "vegetation", "description": "Trees, bushes, grass, rocks."},
+      {"order": 5, "id": "buildings", "description": "Structures and interiors."},
+      {"order": 6, "id": "props", "description": "Street furniture, small objects."},
+      {"order": 7, "id": "npc_spawns", "description": "NPC spawn points and schedules."},
+      {"order": 8, "id": "wildlife_spawns", "description": "Animal spawn points and habitats."}
+    ]
+  },
+  "performance_budgets": {
+    "philosophy": "Define budgets early to prevent performance problems as the world grows.",
+    "targets": {"fps_target": 60, "fps_minimum": 30, "resolution": "1080p", "renderer": "Forward+"},
+    "budgets": [
+      {"id": "max_active_npcs_per_district", "value": 80, "description": "Maximum concurrent NPCs in one district."},
+      {"id": "max_active_npcs_global", "value": 200, "description": "Maximum concurrent NPCs across all loaded chunks."},
+      {"id": "max_traffic_density", "value": 40, "description": "Maximum vehicles on roads in loaded area."},
+      {"id": "max_visible_vehicles", "value": 60, "description": "Maximum vehicles rendered at once."},
+      {"id": "max_dynamic_lights", "value": 16, "description": "Maximum concurrent dynamic lights."},
+      {"id": "max_particle_effects", "value": 50, "description": "Maximum concurrent particle systems."},
+      {"id": "max_loaded_chunks", "value": 25, "description": "Maximum chunks loaded simultaneously (5x5 grid)."},
+      {"id": "max_draw_calls", "value": 2000, "description": "Soft target for draw calls per frame."},
+      {"id": "max_texture_vram_mb", "value": 2048, "description": "Soft target for texture VRAM usage."}
+    ]
+  },
+  "data_driven_design": {
+    "philosophy": "Store game content as data rather than hardcoding it. Makes future updates easier.",
+    "data_sources": [
+      {"id": "cities", "path": "res://data/cities/", "format": "json"},
+      {"id": "roads", "path": "res://data/roads/", "format": "json"},
+      {"id": "shops", "path": "res://data/shops/", "format": "json"},
+      {"id": "npc_schedules", "path": "res://data/npc/", "format": "json"},
+      {"id": "vehicles", "path": "res://data/vehicles/", "format": "json"},
+      {"id": "missions", "path": "res://data/missions/", "format": "json"},
+      {"id": "weather", "path": "res://data/weather/", "format": "json"},
+      {"id": "prices", "path": "res://data/items/", "format": "json"}
+    ]
+  },
+  "free_resources": {
+    "philosophy": "Rely on free resources and communities to reduce workload.",
+    "resources": [
+      {"id": "godot_docs", "name": "Godot Engine Documentation", "use": "Official guides for scenes, resources, world streaming."},
+      {"id": "osm", "name": "OpenStreetMap", "use": "Inspiration for road layouts and city planning."},
+      {"id": "natural_earth", "name": "Natural Earth", "use": "Public-domain terrain and geographic reference."},
+      {"id": "blender", "name": "Blender", "use": "Terrain and modular asset creation."},
+      {"id": "poly_haven", "name": "Poly Haven", "use": "Free HDRIs and textures."},
+      {"id": "kenney", "name": "Kenney", "use": "Free game assets and UI elements."},
+      {"id": "opengameart", "name": "OpenGameArt", "use": "Community open assets (check each license)."}
+    ]
+  },
+  "version_plan": {
+    "philosophy": "Grow the game in layers. Future updates add countries/continents without redesigning core systems.",
+    "milestones": [
+      {"id": "prototype", "name": "Prototype", "scope": ["One playable character", "One neighborhood", "Basic driving", "Save system"], "chunk_count": 4, "area_m": 512},
+      {"id": "alpha", "name": "Alpha", "scope": ["One town", "Shops", "Police", "Weather", "NPC routines"], "chunk_count": 36, "area_m": 1536},
+      {"id": "beta", "name": "Beta", "scope": ["One complete city", "Highway", "Airport", "Farming area", "Forest", "River"], "chunk_count": 144, "area_m": 3072},
+      {"id": "v1", "name": "Version 1.0", "scope": ["One country", "Multiple cities", "Regional travel", "Economy", "Wildlife", "Public transport"], "chunk_count": 576, "area_m": 6144},
+      {"id": "future", "name": "Future Updates", "scope": ["Additional countries", "Additional continents"], "chunk_count": "expanding", "area_m": "expanding"}
+    ]
+  },
+  "streaming_technical": {
+    "chunk_scene_path": "res://worlds/blocks/",
+    "chunk_naming": "chunk_{x}_{z}.tscn",
+    "heightmap_path": "res://worlds/planet/heightmaps/",
+    "async_loading": true,
+    "preload_distance_chunks": 1,
+    "hysteresis_m": 64,
+    "description": "Chunks load when player enters load radius (512m) and unload when beyond unload radius (768m). Hysteresis prevents thrashing at boundaries. State is serialized to cache before unload."
+  }
+}

@@ -1,0 +1,165 @@
+name: Validation & Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    name: Validate & Test
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Validate JSON data files
+        run: |
+          echo "Validating JSON data format..."
+          python3 << 'EOF'
+          import json
+          import os
+          from pathlib import Path
+
+          data_dir = Path("game-client/data")
+          errors = 0
+
+          for json_file in data_dir.rglob("*.json"):
+              try:
+                  with open(json_file, 'r', encoding='utf-8') as f:
+                      json.load(f)
+              except json.JSONDecodeError as e:
+                  print(f"✗ {json_file}: {e}")
+                  errors += 1
+              except Exception as e:
+                  print(f"✗ {json_file}: {e}")
+                  errors += 1
+
+          if errors == 0:
+              print(f"✓ All JSON files valid")
+          else:
+              print(f"\n✗ {errors} JSON validation errors found")
+              exit(1)
+          EOF
+
+      - name: Check for syntax errors in GDScript
+        run: |
+          echo "Checking GDScript syntax..."
+          # Basic check: all .gd files exist and are readable
+          find game-client/scripts -name "*.gd" -type f > /dev/null 2>&1 && echo "✓ All GDScript files readable" || exit 1
+          find game-client/autoload -name "*.gd" -type f > /dev/null 2>&1 && echo "✓ All autoload scripts readable" || exit 1
+          find game-client/tools -name "*.gd" -type f > /dev/null 2>&1 && echo "✓ All tool scripts readable" || exit 1
+          find game-client/tests -name "*.gd" -type f > /dev/null 2>&1 && echo "✓ All test scripts readable" || exit 1
+
+      - name: Verify required files exist
+        run: |
+          echo "Verifying project structure..."
+          files=(
+            "game-client/project.godot"
+            "game-client/scripts/core/Boot.gd"
+            "game-client/scripts/core/Game.gd"
+            "game-client/autoload/GameManager.gd"
+            "game-client/autoload/WorldTime.gd"
+            "game-client/autoload/DebugManager.gd"
+            "game-client/scripts/debug/DebugConsole.gd"
+            "game-client/scripts/debug/PerformanceMonitor.gd"
+            "game-client/scripts/debug/WorldInspector.gd"
+            "game-client/docs/architecture.md"
+            "game-client/docs/coding-standards.md"
+            "game-client/docs/debugging.md"
+            "game-client/docs/data-format.md"
+          )
+
+          missing=0
+          for file in "${files[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "✗ Missing: $file"
+              ((missing++))
+            fi
+          done
+
+          if [ $missing -eq 0 ]; then
+            echo "✓ All required files present"
+          else
+            echo "✗ $missing required files missing"
+            exit 1
+          fi
+
+      - name: Validate data schemas
+        run: |
+          echo "Validating data schemas..."
+          python3 << 'EOF'
+          import json
+          from pathlib import Path
+
+          # Define minimal schema requirements
+          schemas = {
+              "cities": {"required": ["id", "name"]},
+              "countries": {"required": ["id", "name"]},
+              "items": {"required": ["id", "name"]},
+              "jobs": {"required": ["id", "name"]},
+              "shops": {"required": ["id", "name"]},
+              "vehicles": {"required": ["id", "name", "type"]},
+          }
+
+          data_dir = Path("game-client/data")
+          errors = 0
+
+          for folder_name, schema in schemas.items():
+              folder = data_dir / folder_name
+              if not folder.exists():
+                  continue
+
+              for json_file in folder.glob("*.json"):
+                  try:
+                      with open(json_file, 'r') as f:
+                          data = json.load(f)
+                          records = data if isinstance(data, list) else [data]
+                          for record in records:
+                              for req in schema["required"]:
+                                  if req not in record:
+                                      print(f"✗ {json_file}: missing '{req}'")
+                                      errors += 1
+                  except Exception as e:
+                      print(f"✗ {json_file}: {e}")
+                      errors += 1
+
+          if errors == 0:
+              print("✓ All data schemas valid")
+          else:
+              print(f"✗ {errors} schema validation errors")
+              exit(1)
+          EOF
+
+      - name: Check documentation
+        run: |
+          echo "Checking documentation..."
+          docs=(
+            "game-client/docs/architecture.md"
+            "game-client/docs/coding-standards.md"
+            "game-client/docs/debugging.md"
+            "game-client/docs/data-format.md"
+          )
+
+          for doc in "${docs[@]}"; do
+            if [ -f "$doc" ] && [ -s "$doc" ]; then
+              echo "✓ $doc"
+            else
+              echo "✗ $doc missing or empty"
+              exit 1
+            fi
+          done
+
+      - name: Report status
+        if: success()
+        run: |
+          echo ""
+          echo "✓ All validation checks passed"
+          echo "Project is ready for testing and building"

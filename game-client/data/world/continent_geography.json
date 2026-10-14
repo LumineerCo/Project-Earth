@@ -1,0 +1,228 @@
+{
+  "planet_rules": {
+    "planet_type": "rocky",
+    "gravity": 9.81,
+    "day_length_hours": 24,
+    "year_days": 365,
+    "axial_tilt_degrees": 23.5,
+    "seasons": ["spring", "summer", "autumn", "winter"],
+    "moon_count": 1,
+    "dynamic_weather": true
+  },
+  "oceans": [
+    {
+      "id": "northern_ocean",
+      "name": "Northern Ocean",
+      "type": "ocean",
+      "trade_value": 8
+    },
+    {
+      "id": "eastern_ocean",
+      "name": "Eastern Ocean",
+      "type": "ocean",
+      "trade_value": 7
+    },
+    {
+      "id": "western_ocean",
+      "name": "Western Ocean",
+      "type": "ocean",
+      "trade_value": 7
+    },
+    {
+      "id": "southern_ocean",
+      "name": "Southern Ocean",
+      "type": "ocean",
+      "trade_value": 6
+    },
+    {
+      "id": "central_sea",
+      "name": "Central Sea",
+      "type": "sea",
+      "trade_value": 5
+    }
+  ],
+  "mountain_ranges": [
+    {
+      "id": "north_crown_ridge",
+      "name": "North Crown Ridge",
+      "continent": "north_crown",
+      "elevation": 3200,
+      "type": "ancient",
+      "resource_bonus": ["iron", "timber"]
+    },
+    {
+      "id": "westland_highlands",
+      "name": "Westland Highlands",
+      "continent": "westland",
+      "elevation": 2800,
+      "type": "young",
+      "resource_bonus": ["copper", "stone"]
+    },
+    {
+      "id": "solara_scarp",
+      "name": "Solara Scarp",
+      "continent": "solara",
+      "elevation": 2600,
+      "type": "volcanic",
+      "resource_bonus": ["gold", "iron"]
+    },
+    {
+      "id": "aurasia_spine",
+      "name": "Aurasia Spine",
+      "continent": "aurasia",
+      "elevation": 4000,
+      "type": "ancient",
+      "resource_bonus": ["stone", "timber", "gold"]
+    }
+  ],
+  "river_systems": [
+    {
+      "id": "river_sable",
+      "name": "River Sable",
+      "source": "north_crown_ridge",
+      "mouth": "central_sea",
+      "length_km": 860,
+      "fertile_plain": true
+    },
+    {
+      "id": "river_emerald",
+      "name": "River Emerald",
+      "source": "westland_highlands",
+      "mouth": "western_ocean",
+      "length_km": 720,
+      "fertile_plain": true
+    },
+    {
+      "id": "river_sol",
+      "name": "River Sol",
+      "source": "solara_scarp",
+      "mouth": "southern_ocean",
+      "length_km": 980,
+      "fertile_plain": true
+    }
+  ],
+  "climate_zones": [
+    {
+      "id": "polar",
+      "name": "Polar",
+      "temperature_range": [-40, -5],
+      "biome_bias": ["snow", "ice"]
+    },
+    {
+      "id": "boreal",
+      "name": "Boreal Forest",
+      "temperature_range": [-20, 10],
+      "biome_bias": ["pine", "taiga"]
+    },
+    {
+      "id": "temperate",
+      "name": "Temperate Forest",
+      "temperature_range": [5, 20],
+      "biome_bias": ["forest", "grassland"]
+    },
+    {
+      "id": "grassland",
+      "name": "Grassland",
+      "temperature_range": [10, 28],
+      "biome_bias": ["savanna", "prairie"]
+    },
+    {
+      "id": "desert",
+      "name": "Desert",
+      "temperature_range": [15, 40],
+      "biome_bias": ["dunes", "scrub"]
+    },
+    {
+      "id": "tropical",
+      "name": "Tropical Rainforest",
+      "temperature_range": [20, 35],
+      "biome_bias": ["jungle", "wetlands"]
+    },
+    {
+      "id": "alpine",
+      "name": "Alpine",
+      "temperature_range": [-15, 8],
+      "biome_bias": ["mountain", "rock"]
+    }
+  ],
+  "resources": [
+    {
+      "id": "iron",
+      "name": "Iron",
+      "rarity": "common"
+    },
+    {
+      "id": "copper",
+      "name": "Copper",
+      "rarity": "common"
+    },
+    {
+      "id": "gold",
+      "name": "Gold",
+      "rarity": "rare"
+    },
+    {
+      "id": "timber",
+      "name": "Timber",
+      "rarity": "common"
+    },
+    {
+      "id": "stone",
+      "name": "Stone",
+      "rarity": "common"
+    },
+    {
+      "id": "fresh_water",
+      "name": "Fresh Water",
+      "rarity": "common"
+    },
+    {
+      "id": "fish",
+      "name": "Fish",
+      "rarity": "common"
+    },
+    {
+      "id": "fertile_farmland",
+      "name": "Fertile Farmland",
+      "rarity": "common"
+    }
+  ],
+  "continents": [
+    {
+      "id": "north_crown",
+      "name": "North Crown",
+      "inspiration": "Northern Europe and Canada",
+      "primary_climate": "boreal",
+      "mountain_ranges": ["north_crown_ridge"],
+      "river_systems": ["river_sable"],
+      "resource_focus": ["iron", "timber", "fresh_water"]
+    },
+    {
+      "id": "westland",
+      "name": "Westland",
+      "inspiration": "North America",
+      "primary_climate": "temperate",
+      "mountain_ranges": ["westland_highlands"],
+      "river_systems": ["river_emerald"],
+      "resource_focus": ["copper", "stone", "fertile_farmland"]
+    },
+    {
+      "id": "solara",
+      "name": "Solara",
+      "inspiration": "Africa",
+      "primary_climate": "tropical",
+      "mountain_ranges": ["solara_scarp"],
+      "river_systems": ["river_sol"],
+      "resource_focus": ["gold", "fish", "fresh_water"]
+    },
+    {
+      "id": "aurasia",
+      "name": "Aurasia",
+      "inspiration": "Europe and Asia",
+      "primary_climate": "temperate",
+      "mountain_ranges": ["aurasia_spine"],
+      "river_systems": [],
+      "resource_focus": ["stone", "timber", "gold"]
+    }
+  ]
+}

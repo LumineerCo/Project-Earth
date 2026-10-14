@@ -1,0 +1,101 @@
+{
+  "city_id": "nova_city",
+  "city_name": "Nova City",
+  "country_id": "aurora",
+  "region_id": "aurora_central",
+  "population": 85000,
+  "founded_year": 1847,
+  "coordinates": {
+    "latitude": 42.35,
+    "longitude": -71.06
+  },
+  "world_offset": [0, 0, 0],
+  "bounds": {
+    "min_x": -500,
+    "max_x": 500,
+    "min_z": -500,
+    "max_z": 500
+  },
+  "districts": [
+    {
+      "district_id": "downtown",
+      "name": "Downtown",
+      "zone_type": "commercial_high",
+      "bounds": {"min_x": -150, "max_x": 150, "min_z": -150, "max_z": 150},
+      "building_density": 0.85,
+      "max_height": 60,
+      "ambient_color": [0.9, 0.9, 0.95],
+      "population_density": 0.8
+    },
+    {
+      "district_id": "harbor",
+      "name": "Harbor District",
+      "zone_type": "industrial",
+      "bounds": {"min_x": 150, "max_x": 500, "min_z": -500, "max_z": 0},
+      "building_density": 0.5,
+      "max_height": 25,
+      "ambient_color": [0.7, 0.75, 0.8],
+      "population_density": 0.3
+    },
+    {
+      "district_id": "old_town",
+      "name": "Old Town",
+      "zone_type": "residential_low",
+      "bounds": {"min_x": -500, "max_x": -150, "min_z": -150, "max_z": 150},
+      "building_density": 0.6,
+      "max_height": 12,
+      "ambient_color": [0.85, 0.8, 0.7],
+      "population_density": 0.5
+    },
+    {
+      "district_id": "university",
+      "name": "University Quarter",
+      "zone_type": "civic",
+      "bounds": {"min_x": -150, "max_x": 150, "min_z": 150, "max_z": 500},
+      "building_density": 0.45,
+      "max_height": 30,
+      "ambient_color": [0.8, 0.85, 0.9],
+      "population_density": 0.6
+    },
+    {
+      "district_id": "greenwood",
+      "name": "Greenwood Park",
+      "zone_type": "park",
+      "bounds": {"min_x": -500, "max_x": -150, "min_z": 150, "max_z": 500},
+      "building_density": 0.05,
+      "max_height": 8,
+      "ambient_color": [0.7, 0.85, 0.7],
+      "population_density": 0.1
+    },
+    {
+      "district_id": "tech_park",
+      "name": "Tech Park",
+      "zone_type": "commercial_high",
+      "bounds": {"min_x": 150, "max_x": 500, "min_z": 0, "max_z": 500},
+      "building_density": 0.7,
+      "max_height": 45,
+      "ambient_color": [0.85, 0.9, 0.95],
+      "population_density": 0.5
+    }
+  ],
+  "road_network": {
+    "grid_size": 80,
+    "main_avenues": [
+      {"id": "ave_main", "type": "main_avenue", "points": [[-500, 0, 0], [500, 0, 0]]},
+      {"id": "ave_north", "type": "main_avenue", "points": [[0, 0, -500], [0, 0, 500]]},
+      {"id": "ave_harbor", "type": "main_avenue", "points": [[300, 0, -500], [300, 0, 500]]}
+    ],
+    "collectors": [
+      {"id": "col_1", "type": "collector", "points": [[-400, 0, -400], [400, 0, -400]]},
+      {"id": "col_2", "type": "collector", "points": [[-400, 0, 400], [400, 0, 400]]},
+      {"id": "col_3", "type": "collector", "points": [[-400, 0, -400], [-400, 0, 400]]},
+      {"id": "col_4", "type": "collector", "points": [[400, 0, -400], [400, 0, 400]]}
+    ]
+  },
+  "spawn_points": {
+    "player_default": [0, 1.5, 0],
+    "npc_downtown": [0, 1, 50],
+    "npc_harbor": [300, 1, -200],
+    "npc_old_town": [-300, 1, 0]
+  }
+}

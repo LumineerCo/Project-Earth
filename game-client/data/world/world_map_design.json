@@ -1,0 +1,112 @@
+{
+  "world": {
+    "name": "Aurelia",
+    "scale": {
+      "oceans_percent": 70,
+      "land_percent": 30,
+      "continents": 8,
+      "countries": 60,
+      "cities": 800,
+      "villages": 5000
+    },
+    "geographic_layers": [
+      "coastlines",
+      "mountains",
+      "rivers",
+      "lakes",
+      "climate_zones",
+      "forests",
+      "roads",
+      "railways",
+      "airports",
+      "seaports",
+      "cities",
+      "villages",
+      "landmarks"
+    ],
+    "transport": {
+      "highways": [],
+      "rail_corridors": [],
+      "shipping_routes": [],
+      "flight_corridors": []
+    },
+    "landmark_categories": {
+      "natural": [
+        "mountains",
+        "waterfalls",
+        "volcanoes",
+        "caves",
+        "lakes",
+        "forests",
+        "deserts"
+      ],
+      "human_made": [
+        "airports",
+        "stadiums",
+        "universities",
+        "museums",
+        "dams",
+        "ports",
+        "industrial_zones",
+        "shopping_districts"
+      ]
+    }
+  },
+  "continents": [
+    {
+      "id": "northern_highlands",
+      "name": "Northern Highlands",
+      "countries": [
+        {
+          "id": "kestrel",
+          "name": "Kestrel",
+          "states": [
+            {
+              "id": "pine_ridge",
+              "name": "Pine Ridge",
+              "cities": [
+                {
+                  "id": "everharbor",
+                  "name": "Everharbor",
+                  "districts": [
+                    {
+                      "id": "harbor_quarter",
+                      "name": "Harbor Quarter",
+                      "roads": [
+                        "harbor_main",
+                        "north_loop"
+                      ],
+                      "landmarks": [
+                        "harbor_light"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "id": "harbor_main",
+      "name": "Harbor Main",
+      "type": "road",
+      "connected_to": ["north_loop"]
+    },
+    {
+      "id": "north_loop",
+      "name": "North Loop",
+      "type": "road",
+      "connected_to": ["harbor_main"]
+    },
+    {
+      "id": "harbor_light",
+      "name": "Harbor Light",
+      "type": "landmark",
+      "connected_to": []
+    }
+  ]
+}

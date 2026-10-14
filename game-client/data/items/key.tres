@@ -1,0 +1,17 @@
+[gd_resource type="ItemData" load_steps="2" format="3"]
+
+[ext_resource path="res://scripts/items/ItemData.gd" type="Script" id="1"]
+
+[resource]
+script = ExtResource( 1 )
+item_id = "key"
+display_name = "Key"
+description = "A simple key used to unlock doors and chests."
+category = "key"
+max_stack = 1
+weight = 0.1
+value = 10
+usable = false
+equippable = false
+equip_slot = ""
+use_effects = {}

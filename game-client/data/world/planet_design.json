@@ -1,0 +1,219 @@
+{
+  "name": "Aurelia",
+  "planet_type": "rocky",
+  "gravity": 9.81,
+  "day_length_hours": 24,
+  "year_days": 365,
+  "seasons": ["spring", "summer", "autumn", "winter"],
+  "description": "An Earth-inspired planet built for a living open world with original continents and ecologies.",
+  "climate_zones": [
+    {
+      "id": "arctic",
+      "name": "Arctic",
+      "temperature": -20,
+      "humidity": 40,
+      "color": "#7fb3d5"
+    },
+    {
+      "id": "tundra",
+      "name": "Tundra",
+      "temperature": -10,
+      "humidity": 60,
+      "color": "#b7c9d9"
+    },
+    {
+      "id": "taiga",
+      "name": "Taiga",
+      "temperature": -5,
+      "humidity": 70,
+      "color": "#5b7d4f"
+    },
+    {
+      "id": "temperate",
+      "name": "Temperate Forest",
+      "temperature": 10,
+      "humidity": 75,
+      "color": "#4d7f4d"
+    },
+    {
+      "id": "grassland",
+      "name": "Grassland",
+      "temperature": 18,
+      "humidity": 55,
+      "color": "#9acb5b"
+    },
+    {
+      "id": "desert",
+      "name": "Desert",
+      "temperature": 30,
+      "humidity": 20,
+      "color": "#d4a84d"
+    },
+    {
+      "id": "tropical",
+      "name": "Tropical Rainforest",
+      "temperature": 28,
+      "humidity": 90,
+      "color": "#2e7d32"
+    },
+    {
+      "id": "mountain",
+      "name": "Mountain",
+      "temperature": 5,
+      "humidity": 65,
+      "color": "#7a7a7a"
+    },
+    {
+      "id": "wetland",
+      "name": "Wetland",
+      "temperature": 20,
+      "humidity": 85,
+      "color": "#4a6f6f"
+    },
+    {
+      "id": "coastal",
+      "name": "Coastal",
+      "temperature": 22,
+      "humidity": 80,
+      "color": "#5c8fb3"
+    }
+  ],
+  "biomes": [
+    {
+      "id": "pine_forest",
+      "name": "Pine Forest",
+      "climate_zone": "taiga",
+      "tags": ["forest", "conifer"],
+      "color": "#4e6d3f"
+    },
+    {
+      "id": "jungle",
+      "name": "Jungle",
+      "climate_zone": "tropical",
+      "tags": ["forest", "humid"],
+      "color": "#3b7a3b"
+    },
+    {
+      "id": "savannah",
+      "name": "Savannah",
+      "climate_zone": "grassland",
+      "tags": ["grass", "open"],
+      "color": "#b9c94b"
+    },
+    {
+      "id": "beach",
+      "name": "Beach",
+      "climate_zone": "coastal",
+      "tags": ["shore", "sand"],
+      "color": "#e7d69a"
+    },
+    {
+      "id": "volcano",
+      "name": "Volcanic Ridge",
+      "climate_zone": "mountain",
+      "tags": ["rock", "ash"],
+      "color": "#6f4e37"
+    },
+    {
+      "id": "cave",
+      "name": "Cave System",
+      "climate_zone": "mountain",
+      "tags": ["underground"],
+      "color": "#4b4b4b"
+    },
+    {
+      "id": "snow_mountains",
+      "name": "Snow Mountains",
+      "climate_zone": "arctic",
+      "tags": ["ice", "peak"],
+      "color": "#f2f7fb"
+    },
+    {
+      "id": "river",
+      "name": "River Valley",
+      "climate_zone": "wetland",
+      "tags": ["water", "fertile"],
+      "color": "#4c87b0"
+    },
+    {
+      "id": "lake",
+      "name": "Lake Basin",
+      "climate_zone": "wetland",
+      "tags": ["water", "calm"],
+      "color": "#71a9c5"
+    },
+    {
+      "id": "desert_dunes",
+      "name": "Desert Dunes",
+      "climate_zone": "desert",
+      "tags": ["dry", "sandy"],
+      "color": "#d7b56b"
+    }
+  ],
+  "continents": [
+    {
+      "id": "northern_highlands",
+      "name": "Northern Highlands",
+      "inspiration": "cool uplands with long winters and pine forests",
+      "climate_zone": "taiga",
+      "biome_mix": ["pine_forest", "snow_mountains"],
+      "population_goal": 1800000
+    },
+    {
+      "id": "tropical_belt",
+      "name": "Tropical Belt",
+      "inspiration": "dense jungle and river basins",
+      "climate_zone": "tropical",
+      "biome_mix": ["jungle", "river"],
+      "population_goal": 2600000
+    },
+    {
+      "id": "desert_frontier",
+      "name": "Desert Frontier",
+      "inspiration": "dry frontier cities along trade routes",
+      "climate_zone": "desert",
+      "biome_mix": ["desert_dunes", "savannah"],
+      "population_goal": 1200000
+    },
+    {
+      "id": "eastern_archipelago",
+      "name": "Eastern Archipelago",
+      "inspiration": "island chains and fishing economies",
+      "climate_zone": "coastal",
+      "biome_mix": ["beach", "lake"],
+      "population_goal": 1500000
+    },
+    {
+      "id": "western_republic",
+      "name": "Western Republic",
+      "inspiration": "temperate valleys and broad farmland",
+      "climate_zone": "temperate",
+      "biome_mix": ["savannah", "river"],
+      "population_goal": 2200000
+    },
+    {
+      "id": "southern_wildlands",
+      "name": "Southern Wildlands",
+      "inspiration": "vast open plains and wild frontier",
+      "climate_zone": "grassland",
+      "biome_mix": ["savannah", "river"],
+      "population_goal": 900000
+    },
+    {
+      "id": "polar_frontier",
+      "name": "Polar Frontier",
+      "inspiration": "ice shelves and remote research settlements",
+      "climate_zone": "arctic",
+      "biome_mix": ["snow_mountains", "lake"],
+      "population_goal": 300000
+    },
+    {
+      "id": "oceanic_islands",
+      "name": "Oceanic Islands",
+      "inspiration": "volcanic islands and coral coasts",
+      "climate_zone": "coastal",
+      "biome_mix": ["beach", "volcano"],
+      "population_goal": 800000
+    }
+  ]
+}

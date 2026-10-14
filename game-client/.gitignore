@@ -1,0 +1,27 @@
+# Godot 4+ specific
+.godot/
+*.tmp
+
+# Cache and backups (local only)
+cache/
+backups/
+exports/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# Godot import cache (regenerated automatically)
+.import/
+
+# Compiled scripts
+*.gdc
+
+# Export presets (keep config, ignore builds)
+export_presets.cfg

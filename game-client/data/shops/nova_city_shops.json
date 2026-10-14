@@ -1,0 +1,131 @@
+{
+  "city_id": "nova_city",
+  "shops": [
+    {
+      "shop_id": "grocery_old_town_01",
+      "shop_name": "Old Town Market",
+      "shop_type": "grocery",
+      "district_id": "old_town",
+      "building_id": "",
+      "position": [120, 0, 80],
+      "open_hours": [6.0, 23.0],
+      "money_reserve": 8000.0,
+      "price_modifier": 1.0,
+      "inventory": [
+        { "item_id": "bread", "base_price": 2.50, "stock": 80, "max_stock": 100, "base_demand": 1.5 },
+        { "item_id": "water_bottle", "base_price": 1.50, "stock": 90, "max_stock": 100, "base_demand": 1.8 },
+        { "item_id": "milk", "base_price": 3.00, "stock": 60, "max_stock": 80, "base_demand": 1.2 },
+        { "item_id": "eggs", "base_price": 4.00, "stock": 50, "max_stock": 60, "base_demand": 1.0 },
+        { "item_id": "snack_bar", "base_price": 1.20, "stock": 100, "max_stock": 120, "base_demand": 2.0 }
+      ]
+    },
+    {
+      "shop_id": "clothing_downtown_01",
+      "shop_name": "Urban Threads",
+      "shop_type": "clothing",
+      "district_id": "downtown",
+      "building_id": "",
+      "position": [0, 0, -50],
+      "open_hours": [9.0, 21.0],
+      "money_reserve": 12000.0,
+      "price_modifier": 1.0,
+      "inventory": [
+        { "item_id": "shirt_basic", "base_price": 25.00, "stock": 40, "max_stock": 50, "base_demand": 0.8 },
+        { "item_id": "pants_basic", "base_price": 35.00, "stock": 35, "max_stock": 50, "base_demand": 0.7 },
+        { "item_id": "shoes_basic", "base_price": 55.00, "stock": 25, "max_stock": 40, "base_demand": 0.5 },
+        { "item_id": "jacket_basic", "base_price": 80.00, "stock": 15, "max_stock": 30, "base_demand": 0.3 },
+        { "item_id": "accessory_hat", "base_price": 15.00, "stock": 30, "max_stock": 40, "base_demand": 0.6 }
+      ]
+    },
+    {
+      "shop_id": "hardware_harbor_01",
+      "shop_name": "Harbor Hardware",
+      "shop_type": "hardware",
+      "district_id": "harbor",
+      "building_id": "",
+      "position": [-100, 0, 150],
+      "open_hours": [8.0, 18.0],
+      "money_reserve": 10000.0,
+      "price_modifier": 1.0,
+      "inventory": [
+        { "item_id": "hammer", "base_price": 12.00, "stock": 30, "max_stock": 40, "base_demand": 0.4 },
+        { "item_id": "screwdriver_set", "base_price": 18.00, "stock": 25, "max_stock": 40, "base_demand": 0.3 },
+        { "item_id": "paint_can", "base_price": 22.00, "stock": 40, "max_stock": 50, "base_demand": 0.5 },
+        { "item_id": "nails_box", "base_price": 5.00, "stock": 60, "max_stock": 80, "base_demand": 0.8 },
+        { "item_id": "power_drill", "base_price": 95.00, "stock": 10, "max_stock": 20, "base_demand": 0.2 }
+      ]
+    },
+    {
+      "shop_id": "pharmacy_downtown_01",
+      "shop_name": "CityCare Pharmacy",
+      "shop_type": "pharmacy",
+      "district_id": "downtown",
+      "building_id": "",
+      "position": [20, 0, -30],
+      "open_hours": [8.0, 22.0],
+      "money_reserve": 6000.0,
+      "price_modifier": 1.0,
+      "inventory": [
+        { "item_id": "painkillers", "base_price": 8.00, "stock": 70, "max_stock": 80, "base_demand": 1.2 },
+        { "item_id": "first_aid_kit", "base_price": 25.00, "stock": 30, "max_stock": 40, "base_demand": 0.5 },
+        { "item_id": "vitamins", "base_price": 15.00, "stock": 50, "max_stock": 60, "base_demand": 0.8 },
+        { "item_id": "bandages", "base_price": 4.00, "stock": 80, "max_stock": 100, "base_demand": 1.0 },
+        { "item_id": "cough_syrup", "base_price": 10.00, "stock": 40, "max_stock": 50, "base_demand": 0.6 }
+      ]
+    },
+    {
+      "shop_id": "restaurant_old_town_01",
+      "shop_name": "Luigi's Diner",
+      "shop_type": "restaurant",
+      "district_id": "old_town",
+      "building_id": "",
+      "position": [110, 0, 70],
+      "open_hours": [7.0, 24.0],
+      "money_reserve": 5000.0,
+      "price_modifier": 1.0,
+      "inventory": [
+        { "item_id": "coffee", "base_price": 3.50, "stock": 100, "max_stock": 120, "base_demand": 2.0 },
+        { "item_id": "burger_meal", "base_price": 9.50, "stock": 60, "max_stock": 80, "base_demand": 1.5 },
+        { "item_id": "salad", "base_price": 7.00, "stock": 40, "max_stock": 60, "base_demand": 0.8 },
+        { "item_id": "pizza_slice", "base_price": 4.50, "stock": 70, "max_stock": 90, "base_demand": 1.8 },
+        { "item_id": "soda", "base_price": 2.00, "stock": 90, "max_stock": 100, "base_demand": 2.0 }
+      ]
+    },
+    {
+      "shop_id": "gas_station_harbor_01",
+      "shop_name": "Harbor Point Fuel",
+      "shop_type": "gas_station",
+      "district_id": "harbor",
+      "building_id": "",
+      "position": [-90, 0, 140],
+      "open_hours": [0.0, 24.0],
+      "money_reserve": 15000.0,
+      "price_modifier": 1.0,
+      "inventory": [
+        { "item_id": "gasoline", "base_price": 1.80, "stock": 200, "max_stock": 300, "base_demand": 3.0 },
+        { "item_id": "diesel", "base_price": 1.65, "stock": 150, "max_stock": 250, "base_demand": 2.0 },
+        { "item_id": "motor_oil", "base_price": 12.00, "stock": 30, "max_stock": 50, "base_demand": 0.4 },
+        { "item_id": "car_wash_ticket", "base_price": 8.00, "stock": 50, "max_stock": 100, "base_demand": 0.3 },
+        { "item_id": "snack_bar", "base_price": 1.20, "stock": 80, "max_stock": 100, "base_demand": 1.5 }
+      ]
+    },
+    {
+      "shop_id": "electronics_tech_park_01",
+      "shop_name": "TechNova Electronics",
+      "shop_type": "electronics",
+      "district_id": "tech_park",
+      "building_id": "",
+      "position": [80, 0, -120],
+      "open_hours": [10.0, 20.0],
+      "money_reserve": 20000.0,
+      "price_modifier": 1.0,
+      "inventory": [
+        { "item_id": "smartphone", "base_price": 450.00, "stock": 15, "max_stock": 30, "base_demand": 0.3 },
+        { "item_id": "laptop_basic", "base_price": 800.00, "stock": 8, "max_stock": 20, "base_demand": 0.2 },
+        { "item_id": "headphones", "base_price": 65.00, "stock": 25, "max_stock": 40, "base_demand": 0.5 },
+        { "item_id": "phone_charger", "base_price": 15.00, "stock": 50, "max_stock": 80, "base_demand": 1.0 },
+        { "item_id": "usb_cable", "base_price": 8.00, "stock": 60, "max_stock": 100, "base_demand": 1.2 }
+      ]
+    }
+  ]
+}
